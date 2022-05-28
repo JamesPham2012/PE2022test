@@ -1,0 +1,46 @@
+﻿@*
+    
+*@
+@model PE2022test.Models.Book 
+
+@{  
+    ViewData["Title"] = "Delete";  
+}  
+<h2>Delete</h2>  
+<h3>Are you sure you want to delete this?</h3>  
+<div>  
+    <h4>Books</h4>  
+    <hr />  
+    <dl class="dl-horizontal">  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Title)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Title)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Category_ID)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Category_ID)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Publication_Year)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Publication_Year)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Quantity)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Quantity)  
+        </dd>  
+    </dl>  
+  
+    <form asp-action="BookDelete">  
+        <input type="hidden" asp-for="ID" />  
+        <input type="submit" value="BookDelete" class="btn btn-danger" /> |  
+        <a asp-action="BookIndex">Back to List</a>  
+    </form>  
+</div>

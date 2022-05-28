@@ -1,0 +1,48 @@
+﻿@*
+    //Nâng cấp đx k?
+*@
+@model PE2022test.Models.Payment
+
+@{  
+    ViewData["Title"] = "Edit";  
+}  
+<h2>Edit</h2>  
+<h4>BILL</h4>  
+<hr />  
+<div class="row">  
+    <div class="col-md-4">  
+        <form asp-action="PaymentEdit">  
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>  
+            <input type="hidden" asp-for="Payment_ID" />  
+            <div class="form-group">  
+                <label asp-for="Customer_ID" class="control-label"></label>  
+                <input asp-for="Customer_ID" class="form-control" />  
+                <span asp-validation-for="Customer_ID" class="text-danger"></span>  
+            </div>  
+            <div class="form-group">  
+                <label asp-for="Lease_date" class="control-label"></label>  
+                <input asp-for="Lease_date" class="datetime" />  
+                <span asp-validation-for="Lease_date" class="text-danger"></span>  
+            </div>  
+            <div class="form-group">  
+                <label asp-for="Payment_date" class="control-label"></label>  
+                <input asp-for="Payment_date" class="datetime" />  
+                <span asp-validation-for="Payment_date" class="text-danger"></span>  
+            </div>  
+            <div class="form-group">  
+                <label asp-for="Payment_amount" class="control-label"></label>  
+                <input asp-for="Payment_amount" class="form-control" />  
+                <span asp-validation-for="Payment_amount" class="text-danger"></span>  
+            </div>
+            <div class="form-group">  
+                <input type="submit" value="Save" class="btn btn-default" />  
+            </div>  
+        </form>  
+    </div>  
+</div>  
+<div>  
+    <a asp-action="PaymentIndex">Back to List</a>  
+</div>  
+@section Scripts {  
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}  
+}

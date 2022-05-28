@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PE2022test.Models.Review>  
+     
+@{  
+        ViewData["Title"] = "Thư viện của những chú bé";  
+ }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h2>REVIEW LIST</h2>  
+<p>  
+    
+</p>  
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                @Html.DisplayNameFor(model => model.IDBook)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.ISSNum)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Review_date)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Review_context)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Review_star)  
+            </th>  
+            <th></th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        @foreach (var item in Model)  
+{  
+            <tr>  
+                <th>  
+                    @Html.DisplayFor(modelItem => item.IDBook)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.ISSNum)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Review_date)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Review_context)  
+                </th>  
+                <th>  
+                    @for (int i=0;i< item.Review_star; i++)
+                    {
+                        <span class="fa fa-star checked"></span>
+                    }
+                </th> 
+                <td>  
+                    <a asp-action="ReviewEdit" asp-route-id="@item.ISSNum" asp-route-id2="@item.IDBook">Edit</a> |  
+                    <a asp-action="ReviewDetails" asp-route-id="@item.ISSNum" asp-route-id2="@item.IDBook">Details</a> |  
+                    <a asp-action="ReviewDelete" asp-route-id="@item.ISSNum" asp-route-id2="@item.IDBook">Delete</a>  
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table>
+
+<div>  
+    <a asp-action="ReviewCreate">To create a new review</a>  
+</div>  

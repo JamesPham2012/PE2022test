@@ -1,0 +1,42 @@
+﻿@*
+ 
+*@
+@model PE2022test.Models.Fine
+  
+@{  
+    ViewData["Title"] = "Create new fine";  
+}  
+<h2>Create</h2>  
+<h4>Fine</h4>  
+<hr />  
+<div class="row">  
+    <div class="col-md-4">  
+        <form asp-action="FineCreate">  
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>  
+            <div class="form-group">  
+                <label asp-for="SessionID" class="control-label"></label>  
+                <input asp-for="SessionID" class="form-control" />  
+                <span asp-validation-for="SessionID" class="text-danger"></span>  
+            </div>  
+           <div class="form-group">  
+                <label asp-for="Fine_days" class="control-label"></label>  
+                <input asp-for="Fine_days" class="form-control" />  
+                <span asp-validation-for="Fine_days" class="text-danger"></span>  
+            </div>   
+            <div class="form-group">  
+                <label asp-for="Fine_amount" class="control-label"></label>  
+                <input asp-for="Fine_amount" class="form-control" />  
+                <span asp-validation-for="Fine_amount" class="text-danger"></span>  
+            </div>
+            <div class="form-group">  
+                <input type="submit" value="FineCreate" class="btn btn-default" />  
+            </div>  
+        </form>  
+    </div>  
+</div>  
+<div>  
+    <a asp-action="FineIndex">Back to List</a>  
+</div>  
+@section Scripts {  
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}  
+}

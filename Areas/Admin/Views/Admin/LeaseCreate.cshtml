@@ -1,0 +1,47 @@
+﻿@*
+ 
+*@
+@model PE2022test.Models.Lease
+  
+@{  
+    ViewData["Title"] = "Create new lease";  
+}  
+<h2>Create</h2>  
+<h4>Lease</h4>  
+<hr />  
+<div class="row">  
+    <div class="col-md-4">  
+        <form asp-action="LeaseCreate">  
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>  
+            <div class="form-group">  
+                <label asp-for="SessionID" class="control-label"></label>  
+                <input asp-for="SessionID" class="form-control" />  
+                <span asp-validation-for="SessionID" class="text-danger"></span>  
+            </div>  
+           <div class="form-group">  
+                <label asp-for="Book_ID" class="control-label"></label>  
+                <input asp-for="Book_ID" class="form-control" />  
+                <span asp-validation-for="Book_ID" class="text-danger"></span>  
+            </div>   
+            <div class="form-group">  
+                <label asp-for="ISSN" class="control-label"></label>  
+                <input asp-for="ISSN" class="form-control" />  
+                <span asp-validation-for="ISSN" class="text-danger"></span>  
+            </div>  
+            <div class="form-group">  
+                <label asp-for="Lease_date" class="control-label"></label>  
+                <input asp-for="Lease_date" class="datetime" />  
+                <span asp-validation-for="Lease_date" class="text-danger"></span>  
+            </div> 
+            <div class="form-group">  
+                <input type="submit" value="LeaseCreate" class="btn btn-default" />  
+            </div>  
+        </form>  
+    </div>  
+</div>  
+<div>  
+    <a asp-action="LeaseIndex">Back to List</a>  
+</div>  
+@section Scripts {  
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}  
+}

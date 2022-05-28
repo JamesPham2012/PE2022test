@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PE2022test.Models.Author>  
+     
+@{  
+        ViewData["Title"] = "Thư viện của những chú bé";  
+    }  
+<h2>AUTHORS</h2>  
+<p>  
+    
+</p>  
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Author_ID)  
+            </th>  
+            <th>  
+                <text>Name</text>
+            </th>
+            <th></th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        @foreach (var item in Model)  
+{  
+            <tr>  
+                <th>  
+                @Html.DisplayFor(modelItem => item.Author_ID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Author_fname)  
+                    @Html.DisplayFor(model => item.Author_lname)  
+                </th>   
+                <td>  
+                    <a asp-action="AuthorEdit" asp-route-id="@item.Author_ID">Edit</a> |  
+                    <a asp-action="AuthorDetails" asp-route-id="@item.Author_ID">Details</a> |  
+                    <a asp-action="AuthorDelete" asp-route-id="@item.Author_ID">Delete</a>  
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table>
+
+<div>  
+    <a asp-action="AuthorCreate">To create a new author</a>  
+</div>  

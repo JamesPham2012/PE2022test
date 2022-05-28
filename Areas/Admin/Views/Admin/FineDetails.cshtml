@@ -1,0 +1,37 @@
+﻿@*
+    
+*@
+@{
+    ViewData["Title"] = "Details";  
+}
+
+@model PE2022test.Models.Fine
+<h2>Details</h2>  
+<div>  
+    <h4>Fine</h4>  
+    <hr />  
+    <dl class="dl-horizontal">  
+        <dt>  
+            @Html.DisplayNameFor(model => model.SessionID)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.SessionID)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Fine_days)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Fine_days)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Fine_amount)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Fine_amount)  
+        </dd>  
+    </dl>  
+</div>  
+<div>  
+    <a asp-action="FineEdit" asp-route-id="@Model.SessionID">Edit</a> |  
+    <a asp-action="FineIndex">Back to List</a>  
+</div>

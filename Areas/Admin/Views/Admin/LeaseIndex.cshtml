@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PE2022test.Models.Lease>  
+     
+@{  
+        ViewData["Title"] = "Thư viện của những chú bé";  
+    }  
+<h2>LEASES ACTIVATE</h2>  
+<p>  
+    
+</p>  
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                @Html.DisplayNameFor(model => model.SessionID)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Book_ID)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.ISSN)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Lease_date)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Expiry_date)  
+            </th>  
+            <th></th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        @foreach (var item in Model)  
+{  
+            <tr>  
+                <th>  
+                @Html.DisplayFor(modelItem => item.SessionID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Book_ID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.ISSN)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Lease_date)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Expiry_date)  
+                </th>  
+                <td>  
+                    <a asp-action="LeaseEdit" asp-route-id="@item.SessionID">Edit</a> |  
+                    <a asp-action="LeaseDetails" asp-route-id="@item.SessionID">Details</a> |  
+                    <a asp-action="LeaseDelete" asp-route-id="@item.SessionID">Delete</a>  
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table>
+
+<div>  
+    <a asp-action="LeaseCreate">To create a new lease manual</a>  
+</div>  

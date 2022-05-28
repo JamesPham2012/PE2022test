@@ -1,0 +1,46 @@
+﻿@*
+    //Nâng cấp đx k?
+*@
+@model PE2022test.Models.Review
+
+@{  
+    ViewData["Title"] = "Edit";  
+}  
+<h2>Edit</h2>  
+<h4>Review</h4>  
+<hr />  
+<div class="row">  
+    <div class="col-md-4">  
+        <form asp-action="ReviewEdit">  
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>  
+            <input type="hidden" asp-for="ISSNum" />
+            <div class="form-group">
+                <input type="hidden" asp-for="IDBook" class="form-control" />  
+                <span asp-validation-for="IDBook" class="text-danger"></span>  
+            </div> 
+            <div class="form-group">
+                <input type="hidden" asp-for="Review_date" class="datetime" />  
+                <span asp-validation-for="Review_date" class="text-danger"></span>  
+            </div> 
+            <div class="form-group">  
+                <label asp-for="Review_context" class="control-label"></label>  
+                <input asp-for="Review_context" class="form-control" />  
+                <span asp-validation-for="Review_context" class="text-danger"></span>  
+            </div> 
+            <div class="form-group">  
+                <label asp-for="Review_star" class="control-label"></label>  
+                <input asp-for="Review_star" class="form-control" />  
+                <span asp-validation-for="Review_star" class="text-danger"></span>  
+            </div>  
+            <div class="form-group">  
+                <input type="submit" value="Save" class="btn btn-default" />  
+            </div>  
+        </form>  
+    </div>  
+</div>  
+<div>  
+    <a asp-action="ReviewIndex">Back to List</a>  
+</div>  
+@section Scripts {  
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}  
+}

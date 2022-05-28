@@ -1,0 +1,432 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Mulish", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/bg.png');
+    background-repeat: repeat;
+}
+
+.btn {
+    background: linear-gradient(to right, #eacda3, #d6ae7b);
+}
+
+iframe {
+    display:none;
+}
+
+
+a:hover,
+a:focus {
+    outline: none;
+    color: #000000;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.trending-title h4,
+.trending-title h5 {
+    color: antiquewhite;
+    font-weight: 600;
+    line-height: 21px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    position: relative;
+    font-family: "Oswald", sans-serif;
+}
+
+.trending-title h4:after,
+.trending-title h5:after {
+   position: absolute;
+   left: 0;
+   top: -6px;
+   height: 32px;
+   width: 4px;
+   background: orange;
+   content: "";
+    }
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.set-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Default_JP 85W';
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 25px;
+    margin: 0 0 15px 0;
+}
+
+.navbar{
+    background-color:rgba(0,0,0,0.6);
+}
+.navbar-collapse{
+     font-size:1.25rem;
+}
+
+.nav-item ul {
+    font-family: 'Default_JP 85W';
+}
+
+.nav-item ul li {
+    margin-bottom: 10px;
+}
+
+.nav-item ul li a {
+    color: orange;
+ }
+
+.login-button {
+    margin-left: 0.75rem;
+}
+
+.login-button a {
+    color: antiquewhite;
+}
+
+.navbar .music{
+    
+}
+
+.navbar .action-form {
+    width: 320px;
+    padding: 20px;
+    left: auto;
+    right: 0;
+    font-size: 1rem;
+}
+
+.navbar .action-form p{
+    font-size:16px;
+    font-weight:500;
+}
+.form-group{
+    margin-bottom:1rem;
+}
+
+
+.fa-user {
+    color: antiquewhite;
+}
+
+.slider {
+}
+
+#carouselExampleCaptions {
+    position: relative;
+    border: 1px solid white;
+}
+
+.carousel-item img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: auto;
+    filter: brightness(60%);
+}
+
+
+.carousel-item .carousel-caption {
+    text-align: left;
+    left: 3%;
+}
+
+.carousel-caption{
+    margin-bottom:3%;
+}
+
+.carousel-caption .label {
+    display:inline-block;
+    background-color: black;
+    width:fit-content;
+    display: flex;
+    justify-content: center;
+    color: antiquewhite;
+    margin-bottom: 10px;
+    padding:5px 20px 5px 10px;
+    border-radius:5px;
+    white-space:nowrap;
+    overflow:hidden;
+    font-size:1.25rem;
+}
+
+.carousel-caption h2 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    line-height: 40px;
+    font-size: 42px;
+    color: antiquewhite;
+}
+
+.carousel-caption p {
+    color: white;
+    font-size: 20px;
+    line-height:40px;
+}
+
+.carousel-caption a {
+    background-color: darkorange;
+    color: antiquewhite;
+    font-size:1.25rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    border-radius: 0%;
+    background-color: #000;
+}
+
+
+.book-products {
+    padding-top: 80px;
+    padding-bottom:60px;
+}
+
+.book-products #trending-row {
+    padding-bottom:15px;
+}
+
+.book-products #view-all{
+    color:antiquewhite;
+    margin-right:5px;
+    font-size:120%;
+    letter-spacing: 1px;
+
+}
+
+.fa-arrow-right{  
+    color:white;
+}
+
+.product-item{
+    border:1px solid white;
+}
+
+.product-item-text {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.product-item-text h4 a{
+    color: antiquewhite;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+.book-products .product_pic{
+    position:relative;
+    height:450px;
+    border-radius:5px;
+}
+.book-products .info {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    color: antiquewhite;
+    font-size: 130%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+
+
+.image__img {
+    display: block;
+    width: 100%;
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay--blur {
+    backdrop-filter: blur(5px);
+}
+
+.image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+.image__overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image__description {
+    font-size: 1rem;
+    color:antiquewhite;
+    margin:10px 8px;
+}
+
+footer {
+    background: linear-gradient(to right, #eacda3, #d6ae7b);
+}
+
+footer p{
+    font-family: 'Traveling _Typewriter';
+}
+
+
+/* Media Queries */
+
+@media only screen and (max-width:1500px) {
+    .carousel-caption {
+        padding-bottom: 5%;
+    }
+}
+
+@media only screen and (max-width:1199px) {
+
+    .carousel-caption .label{
+        font-size:1rem;
+    }
+    .carousel-caption h2 {
+        font-size: 32px;
+    }
+    .carousel-caption p{
+        font-size:16px;
+    }
+     .carousel-control-prev, .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+    .carousel-item a {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .carousel-caption p {
+        display: none;
+    }
+    .navbar .music{
+        padding-bottom:20px;
+    }
+    .navbar .input-group{
+        width:30%;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .carousel-caption h2 {
+        font-size: 24px;
+    }
+    .carousel-caption .label {
+        font-size: 0.75rem;
+    }
+    carousel-caption  {
+        font-size: 0.5rem;
+    }
+    .carousel-item a {
+        font-size: 0.75rem;
+    }
+    .navbar .input-group {
+        width: 40%;
+    }
+    
+}
+
+@media only screen and (max-width:575px) {
+    #carouselExampleCaptions {
+        display: none;
+    }
+    .navbar .input-group {
+        width:50%;
+    }
+    .book-products .view-all {
+        flex: auto;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width:1199px){
+    .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: .5s ease all;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0px);
+        transition: .5s ease all;
+    }
+}

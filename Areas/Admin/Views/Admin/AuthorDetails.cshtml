@@ -1,0 +1,37 @@
+﻿@*
+    
+*@
+@{
+    ViewData["Title"] = "Details Author";  
+}
+
+@model PE2022test.Models.Author
+<h2>Details</h2>  
+<div>  
+    <h4>Book</h4>  
+    <hr />  
+    <dl class="dl-horizontal">  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Author_ID)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Author_ID)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Author_fname)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Author_fname)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Author_lname)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Author_lname)  
+        </dd>
+    </dl>  
+</div>  
+<div>  
+    <a asp-action="AuthorEdit" asp-route-id="@Model.Author_ID">Edit</a> |  
+    <a asp-action="AuthorIndex">Back to List</a>  
+</div>

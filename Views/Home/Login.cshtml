@@ -1,0 +1,102 @@
+﻿@model IEnumerable<PE2022test.Models.ViewBook>  
+     
+@{  
+        ViewData["Title"] = "Thư viện của những chú bé";  
+    }  
+
+<h2>LIBRARY</h2>  
+
+ <section class="slider">
+        <div class="container">
+         <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/css/img/carousel/1.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-md-block">
+                    <div class="label">Mystery, Thriller</div>
+                    <h2>First slide label</h2>
+                    <p>Ngành IT Việt Nam hiện nay ở đầu của sự phát triển</p>
+                    <a class="btn btn-outline-warning" href="#" role="button">PRE-ORDER</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="/css/img/carousel/2.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-md-block">
+                    <div class="label">Adventure, Drama</div>
+                    <h2>Second slide label</h2>
+                    <p>Có thể nói IT là vua của các nghề</p>
+                    <a class="btn btn-outline-warning" href="#" role="button">PRE-ORDER</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="/css/img/carousel/3.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-md-block">
+                    <div class="label">Comedy</div>
+                    <h2>Third slide label</h2>
+                    <p>Vừa có tiền, có quyền. Vừa kiếm được nhiều $ lại được xã hội trọng vọng</p>
+                    <a class="btn btn-outline-warning" href="#" role="button">PRE-ORDER</a>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </div>
+      </section>
+
+        <section class ="book-products">
+            <div class="container">
+                <div class = "row">
+                    <div class ="col-lg-12">
+                        <div class="trending-books">
+                            <div class="row" id="trending-row">
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <div class ="trending-title">
+                                        <h4>Trending Books</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-row-reverse">
+                                    <div class="view-all">
+                                        <a id="view-all" href="#">@ViewBag.Message</a>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                @foreach (var item in Model)
+                               {
+                                   <div class ="col-lg-3 col-md-6 col-sm-6">
+                                       <div class="product-item">
+                                           <div class= "product_pic set-bg" style="background-image:url(@item.add_img_Book)">
+                                               <div class="image__img">
+                                                   <div class="image__overlay image__overlay--blur">
+                                                        <p class="image__description">@item.Description</p>
+                                                   </div>
+                                               </div>
+                                               <div class="info">
+                                                   @item.Book.Publication_Year
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="product-item-text">
+                                           <h4><a href="#">@item.Book.Title</a></h4>
+                                       </div>
+                                   </div>
+                               }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

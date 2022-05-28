@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="assets\img\bg.png" />
+    <Content Include="assets\img\carousel\1.png" />
+    <Content Include="assets\img\carousel\2.png" />
+    <Content Include="assets\img\carousel\3.png" />
+    <Content Include="assets\img\carousel\4.png" />
+    <Content Include="assets\img\logo_nhom.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\audio\bg_audio.mp3" />
+    <None Include="wwwroot\audio\bs_piano.mp3" />
+    <None Include="wwwroot\audio\sakura.mp3" />
+    <None Include="wwwroot\audio\silence.mp3" />
+    <None Include="wwwroot\css\img\book-images\1.jpg" />
+    <None Include="wwwroot\css\img\book-images\2.jpg" />
+    <None Include="wwwroot\css\img\book-images\3.jpg" />
+    <None Include="wwwroot\css\img\book-images\4.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Devart.Data.MySql.EFCore" Version="8.21.2066" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.1" />
+    <PackageReference Include="MySql.Data" Version="8.0.28" />
+    <PackageReference Include="MySqlConnector" Version="2.1.9" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="xunit.assert" Version="2.4.1" />
+  </ItemGroup>
+
+</Project>

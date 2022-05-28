@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PE2022test</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PE2022test.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/books.css" type="text/css" />
+</head>
+<body>
+  <div class="bg">
+     <header>
+         <nav class="navbar navbar-expand-lg px-2 navbar-dark fixed-top">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="/css/img/logo_nhom.png" width="50" height="50" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Homepage</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" asp-action="BookCreate">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link active" aria-current="page" href="#">About us</a>
+                    </li>
+                  </ul>
+                 <div class ="music me-auto">
+                     <button class="btn" onclick="playBgMusic()">
+                          <i class ="fa-solid fa-play fa-lg"></i>
+                     </button>
+                     <button class="btn" onclick="pauseBgMusic()">
+                          <i class ="fa-solid fa-pause fa-lg"></i>
+                     </button> 
+                    <iframe src="/audio/silence.mp3" allow="autoply" id="audio"></iframe>
+                    <audio id="bg_music" src="/audio/silence.mp3" autoplay loop></audio>
+                 </div>
+                 <form asp-action="Searchtest" class="navbar-form form-inline">
+                     @using (Html.BeginForm("Searchtest","Home",FormMethod.Post))
+                        {
+                        <p>
+                            Title: @Html.TextBox("search") <input type="submit" value="Tìm kiếm" />
+                        </p>
+                        }
+                 </form>
+                 <div class="navbar-nav ms-auto">
+                     <div class="nav-item dropdown">
+                        <a href="#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle" aria-expanded="false">
+                            Sign Up
+                         </a>
+                        <div class="dropdown-menu dropdown-menu-end action-form">
+                            <form asp-action="Login">
+                            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                            {
+                                 <p class="hint-text">Fill in this form to create your account!</p>
+                                
+                                <div class="form-group">
+                                    Title: @Html.TextBox("email")
+						        </div>
+                                <div class="form-group">
+                                    Title: @Html.TextBox("password")
+						        </div>
+                                <div class="form-group">
+							        <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
+						        </div>
+						        <input type="submit" class="btn btn-block" value="Sign up" style="width:100%;background-color:#FF9F00;color:antiquewhite">
+                            }
+                            </form>
+                        </div>
+                     </div>
+                     
+                 </div>
+                </div>
+              </div>
+      </nav>
+     </header>
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+  </div>
+
+    <footer class="text-center text-lg-start">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Footer text</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+              aliquam voluptatem veniam, est atque cumque eum delectus sint!
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Footer text</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+              molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+              aliquam voluptatem veniam, est atque cumque eum delectus sint!
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+    <!--<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - PE2022test - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/9bc94d0d27.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="~/js/books.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PE2022test.Models.Book>  
+     
+@{  
+        ViewData["Title"] = "Thư viện của những chú bé";  
+    }  
+<h2>LIBRARY</h2>  
+<p>  
+    
+</p>  
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                @Html.DisplayNameFor(model => model.ID)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Title)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Category_ID)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Publication_Year)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Quantity)  
+            </th>  
+            <th></th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        @foreach (var item in Model)  
+{  
+            <tr>  
+                <th>  
+                @Html.DisplayFor(modelItem => item.ID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Title)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Category_ID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Publication_Year)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Quantity)  
+                </th>  
+                <td>  
+                    <a asp-action="BookEdit" asp-route-id="@item.ID">Edit</a> |  
+                    <a asp-action="BookDetails" asp-route-id="@item.ID">Details</a> |  
+                    <a asp-action="BookDelete" asp-route-id="@item.ID">Delete</a>  
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table>
+
+<div>  
+    <a asp-action="BookCreate">To create a book</a>  
+</div>  

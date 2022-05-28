@@ -1,0 +1,50 @@
+﻿@model IEnumerable<PE2022test.Models.Fine>  
+     
+@{  
+        ViewData["Title"] = "Thư viện của những chú bé";  
+    }  
+<h2>FINE ACTIVATE</h2>  
+<p>  
+    
+</p>  
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                @Html.DisplayNameFor(model => model.SessionID)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Fine_days)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Fine_amount)  
+            </th>  
+            <th></th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        @foreach (var item in Model)  
+{  
+            <tr>  
+                <th>  
+                @Html.DisplayFor(modelItem => item.SessionID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Fine_days)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Fine_amount)  
+                </th> 
+                <td>  
+                    <a asp-action="FineEdit" asp-route-id="@item.SessionID">Edit</a> |  
+                    <a asp-action="FineDetails" asp-route-id="@item.SessionID">Details</a> |  
+                    <a asp-action="FineDelete" asp-route-id="@item.SessionID">Delete</a>  
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table>
+
+<div>  
+    <a asp-action="FineCreate">To create a new fine manual</a>  
+</div>  

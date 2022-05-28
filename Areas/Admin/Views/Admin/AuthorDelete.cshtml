@@ -1,0 +1,39 @@
+﻿@*
+    
+*@
+@model PE2022test.Models.Author
+
+@{  
+    ViewData["Title"] = "Delete Author";  
+}  
+<h2>Delete</h2>  
+<h3>Are you sure you want to delete this author?</h3>  
+<div>  
+    <hr />  
+    <dl class="dl-horizontal">  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Author_ID)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Author_ID)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Author_fname)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Author_fname)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Author_lname)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Author_lname)  
+        </dd>  
+    </dl>  
+  
+    <form asp-action="AuthorDelete">  
+        <input type="hidden" asp-for="Author_ID" />  
+        <input type="submit" value="AuthorDelete" class="btn btn-danger" /> |  
+        <a asp-action="AuthorIndex">Back to List</a>  
+    </form>  
+</div>

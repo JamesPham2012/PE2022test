@@ -1,0 +1,43 @@
+﻿@*
+    
+*@
+@{
+    ViewData["Title"] = "Details";  
+}
+
+@model PE2022test.Models.ViewBook
+<h2>Details</h2>  
+<div>  
+    <h4>Book-Authors</h4>  
+    <hr />  
+    <dl class="dl-horizontal">  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Book.ID)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Book.ID)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Book.Title)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Book.Title)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Authors)  
+        </dt>  
+        <dd>  
+            @foreach (Author author in Model.Authors)  
+            {
+             
+                <dd>  
+                    @Html.DisplayFor(modelItem => author.Author_fname)  
+                    <a asp-action="Book_AuthorDelete" asp-route-id="@Model.Book.ID" asp-route-id2="@author.Author_ID">Delete</a>
+                </dd>
+            }
+        </dd>  
+    </dl>  
+</div>  
+<div>  
+     <a asp-action="Book_AUthorIndex">Back to List</a>  
+</div>

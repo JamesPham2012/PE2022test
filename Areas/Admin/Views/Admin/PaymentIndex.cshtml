@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PE2022test.Models.Payment>  
+     
+@{  
+        ViewData["Title"] = "Thư viện của những chú bé";  
+    }  
+<h2>BILLS</h2>  
+<p>  
+    
+</p>  
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Payment_ID)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Customer_ID)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Lease_date)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Payment_date)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Payment_amount)  
+            </th>  
+            <th></th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        @foreach (var item in Model)  
+{  
+            <tr>  
+                <th>  
+                @Html.DisplayFor(modelItem => item.Payment_ID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Customer_ID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Lease_date)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Payment_date)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Payment_amount)  
+                </th>  
+                <td>  
+                    <a asp-action="PaymentEdit" asp-route-id="@item.Payment_ID">Edit</a> |  
+                    <a asp-action="PaymentDetails" asp-route-id="@item.Payment_ID">Details</a> |  
+                    <a asp-action="PaymentDelete" asp-route-id="@item.Payment_ID">Delete</a>  
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table>
+
+<div>  
+    <a asp-action="PaymentCreate">To create a new lease manual</a>  
+</div>  

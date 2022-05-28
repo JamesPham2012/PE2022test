@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PE2022test.Models.ViewBook_Author> 
+     
+@{  
+        ViewData["Title"] = "Thư viện của những chú bé";  
+    }  
+<h2>LIBRARY</h2>  
+<p>  
+    
+</p>  
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Book_Authors.BookID)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Book_Title)  
+            </th>  
+            <th>  
+                @Html.DisplayNameFor(model => model.Book_Authors.AuthorID)  
+            </th> 
+            <th>  
+                @Html.DisplayNameFor(model => model.Author_Name)  
+            </th>  
+            <th></th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        @foreach (var item in Model)  
+{
+            <tr>  
+                <th>  
+                    @Html.DisplayFor(modelItem => item.Book_Authors.BookID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Book_Title)  
+                </th>   
+                <th>  
+                    @Html.DisplayFor(modelItem => item.Book_Authors.AuthorID)  
+                </th>  
+                <th>  
+                    @Html.DisplayFor(model => item.Author_Name)  
+                </th>  
+                <td>  
+                    <a asp-action="Book_AuthorDetails" asp-route-id="@item.Book_Authors.BookID">Details</a>
+                      
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table>
+
+<div>  
+    <a asp-action="Book_AuthorCreate">To create a new author writing book</a>  
+</div>  

@@ -1,0 +1,55 @@
+﻿@*
+    
+*@
+@{
+    ViewData["Title"] = "Details";  
+}
+
+@model PE2022test.Models.Lease
+<h2>Details</h2>  
+<div>  
+    <h4>Lease</h4>  
+    <hr />  
+    <dl class="dl-horizontal">  
+        <dt>  
+            @Html.DisplayNameFor(model => model.SessionID)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.SessionID)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Book_ID)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Book_ID)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.ISSN)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.ISSN)  
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Lease_date)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Lease_date)
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Expiry_date)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Expiry_date)
+        </dd>  
+        <dt>  
+            @Html.DisplayNameFor(model => model.Status)  
+        </dt>  
+        <dd>  
+            @Html.DisplayFor(model => model.Status)
+        </dd>  
+    </dl>  
+</div>  
+<div>  
+    <a asp-action="LeaseEdit" asp-route-id="@Model.SessionID">Edit</a> |  
+    <a asp-action="LeaseIndex">Back to List</a>  
+</div>
